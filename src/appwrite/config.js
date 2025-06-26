@@ -69,7 +69,7 @@ export class Service {
         slug
       );
     } catch (error) {
-      console.log("Appwrite serive :: error", error);
+      console.log("Appwrite serive :: getPost", error);
       return false;
     }
   }
@@ -81,7 +81,7 @@ export class Service {
         queries,
       );
     } catch (error) {
-      console.log("Appwrite serive :: error", error);
+       console.log("Appwrite serive :: getPosts :: error", error);
       return false;
     }
   }

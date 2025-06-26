@@ -21,7 +21,7 @@ export class AuthService {
       );
       if (userAccount) {
         //call another method
-       return this.login(email, password);
+       return this.login({email, password});
       } else {
         return userAccount;
       }
@@ -32,7 +32,7 @@ export class AuthService {
 
   async login({email, password}) {
     try {
-      return await this.account.createEmailPasswordSession(email, password);
+      return await this.account.createSession(email, password);
     } catch (error) {
       throw error;
     }
@@ -51,7 +51,7 @@ export class AuthService {
     try {
       await this.account.deleteSessions();
     } catch (error) {
-      console.log("Appwrite serives :: logout :: error", error);
+      console.log("Appwrite serive :: logout :: error", error);
     }
   }
 }
